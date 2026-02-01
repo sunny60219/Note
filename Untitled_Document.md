@@ -24,12 +24,13 @@
 ### 非同步作業 (世代)
 `盡量使用第三代，效率佳`
 
-1.Callback
-2.事件
-3.async / await
+1. Callback
+2. 事件
+3. async / await
 
 ---
 ### Get使用場合
-1.網址列
-2.a連結
-3.img src="..."
+1. 網址列
+2. a連結
+3. img src="..."
+
