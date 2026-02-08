@@ -1,0 +1,109 @@
+```
+# C# Coding Standard
+
+本文件用於統一本專題之 C# 程式碼撰寫規範，以提升可讀性、維護性與團隊協作效率。本規範可隨專題進行中持續調整與補充。
+
+## 一、命名規範 Naming Convention
+
+### 1. 變數與參數（camelCase）
+- 第一個單字小寫
+- 第二個（含）之後的單字首字母大寫
+
+```csharp
+int totalCount;
+string userName;
+bool isCompleted;
+
+void CreateOrder(int orderId, string userName)
+```
+
+### 2. 方法與類別（PascalCase）
+- 每個單字的首字母皆為大寫
+
+```csharp
+class OrderService
+{
+    public void CreateOrder()
+    {
+    }
+}
+```
+
+### 3. 常數（Constant）
+- 使用 PascalCase 命名
+- 命名需具備語意，避免使用魔法數字
+
+```csharp
+const int MaxRetryCount = 3;
+const string DefaultRoleName = "User";
+```
+
+## 二、程式碼格式 Formatting
+
+### 1. 自動格式化
+- 每次完成 C# 程式碼撰寫後，請使用 Visual Studio 快捷鍵 Ctrl + K, Ctrl + D 進行自動格式化
+
+```text
+Ctrl + K, Ctrl + D
+```
+
+### 2. 空格與排版規則
+- 運算子前後需保留空格
+- 參數之間以「逗號 + 空格」分隔
+- 符號與變數之間需保留適當間距，以提升閱讀性
+
+```csharp
+if (count > 0 && isValid)
+{
+    totalPrice = unitPrice * count;
+}
+```
+
+### 3. 大括號風格
+- 使用 Allman Style（C# 預設）
+- 大括號需獨立成行，不可與程式碼同行
+
+```csharp
+if (isActive)
+{
+    DoSomething();
+}
+```
+
+## 三、可讀性與結構 Readability
+
+### 1. 方法職責單一
+- 一個方法僅負責一件事情
+- 若方法內容過長，請考慮拆分為多個方法
+
+```csharp
+public void ProcessOrder()
+{
+    ValidateOrder();
+    CalculatePrice();
+    SaveOrder();
+}
+```
+
+### 2. 命名優先於註解
+- 優先使用清楚且具語意的命名
+- 避免僅用註解補足命名不足的情況
+
+```csharp
+// 不建議
+int x;
+
+// 建議
+int totalUserCount;
+```
+
+## 四、團隊約定 Team Agreement
+
+### 1. 提交前檢查
+- 提交程式碼前，請確認命名與格式符合本規範
+- 確保已進行程式碼格式化
+
+### 2. 規範調整
+- 本規範為團隊共識文件
+- 若實作上有不適用之處，可提出討論並進行調整
+```
