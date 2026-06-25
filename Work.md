@@ -1,10 +1,10 @@
 
 ## 待看文件
-- [ ] 專案Controller ⇒ Bll ⇒ Repostory
+- [x] 專案Controller ⇒ Bll ⇒ Repostory
 - [x] 操作手冊ppt
 - [x] 新人相關資料夾
 - [x] ER Model(面試、錄取+報到)
-- [ ] SSMS
+- [x] SSMS
 
 ---
 
@@ -29,11 +29,24 @@
 || 錄取+報到的FileUpload表是在哪邊? | 改名 AdmissionsFileUpload |
 || Admissions 錄取表的填寫對象是誰?表中的AgreeConfirm和IsCancle是代表該錄取資料使否通過和是否取消? | 被錄取者從信件按下同意錄取進入系統後，所填寫的欄位 |
 || 錄取的ER Model 左側資料表是部分資訊嗎? ||
-|| 任用的RankGrades表中 FixedSalaryRatio、VariableSalaryRatio、YearlyMinAllowance、YearlyMaxAllowance 欄位是存放什麼資料? |  |
-|| 業績目標的表是在有業績目標食材必填嗎? ||
-|| MailTemplate中type欄位的作用為何? ||
-|| 職等和職稱的多對多關係，與表中對應PM或主管的職稱不同有關係嗎?(ppt p.74) ||
-|| 路由的v1是代表什麼? ||
+|| 任用的RankGrades表中 FixedSalaryRatio、VariableSalaryRatio、YearlyMinAllowance、YearlyMaxAllowance 欄位是存放什麼資料? | 基本上是根據需求方所提供的欄位 |
+|| 業績目標的表是在有業績目標時才必填嗎? | 之後會更新成必填 |
+|| MailTemplate中type欄位的作用為何? | 0:自訂 1:預設 |
+|| 職等和職稱的多對多關係，與表中對應PM或主管的職稱不同有關係嗎?(ppt p.74) | 是多對多沒錯，一個職稱(Ex.專員)但職等不同(我2同事3)，所以一個職等可以有多個職稱，一個職稱可以有多個職等 |
+|| 路由的v1是代表什麼? | 版本 |
+|| 資歷查核表中 與面試者關係是什麼? | 照會時使用 |
+|| 空會議室相關的程式碼可以從哪邊尋得 | CommonService |
+|| 同一場面試能夠有多個資歷查核? | 是，可以，比如人資想照會多位前主管 |
+|| 任用Admission表是否修正過欄位? ||
+|| 合約書或同意書的文字內容目前有存放在資料庫內嗎? | No |
+|| 有些權限不足的操作應如何查看後端程式碼? ||
+|| 部分功能的API是發到api/comm，應當如何查看? ||
+|| 職類薪資級距表也是在自填時參考嗎? | 是 |
+|| 人資長與人事權主管的不同? | 人資長是處級主管，最大權限決定人事相關，人事權主管是部門級主管 |
+|| 測試資料產出的自我介紹是空的、無法寄送報到信 ||
+|| 轉報到時需要檢核任用是否流程皆結束了嗎? ||
+|| 報到完成後人員會直接變為員工名單? ||
+|| 轉報到後依舊會在錄取的表中?報到結束後也會? ||
 ||||
 | Code | Interview Controller注入的_mainBll是什麼? | 從外部注入進來，型別為IMainBll的(MainBll)物件 |
 || 想問Bll層的架構分布以及他們分別的作用(interface、repos、IMainBll) | 介面是提供方法目錄，去定義所需方法的傳入跟傳出型態與變數，交由實作他的類別去仔細寫方法內容；repos資料夾是裝負責實作的類別 |
@@ -42,8 +55,7 @@
 || DI注入是什麼? | 讓Controller裡呼叫的物件是符合型別的外部傳入物件，無論它實際為哪個類別(去實作的)，能夠降低耦合、方便替換與測試 |
 || DAL層中資料夾的DAL、Entity、ViewModel 分別裝什麼內容 ||
 || MainDB中的物件為何需要延遲建立? ||
-||  
-
+|| 信件內容中的超連結或{url}是如何替換的 ||
 
 
 ---
